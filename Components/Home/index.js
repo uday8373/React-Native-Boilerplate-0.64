@@ -1,20 +1,21 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import {
     Header,
-    LearnMoreLinks,
     Colors,
-    DebugInstructions,
-    ReloadInstructions,
   } from 'react-native/Libraries/NewAppScreen';
 import { View, StyleSheet, StatusBar, SafeAreaView, Text, ScrollView, Button } from 'react-native'
-import Apis from './../../Services/apis'
+import { connect } from 'react-redux'
+import { getUsers } from './../../Actions/userAction'
+import  UserList  from './userList'
 
-export default function (props) {
+function Homecontainer (props) {
     const { navigation } = props
     useEffect(() => {
-      const data ={name:"Uday",salary:"1123",age:"221",id:"7197"}
-      Apis.create_employee(data).then(res => console.log('res', res))
+      //Prevent re-calling when props available
+      if(!props.userlist.user)
+         props.fecthUsers()
     })
+
     return (
         <>
           <StatusBar barStyle="dark-content" />
@@ -31,37 +32,30 @@ export default function (props) {
               <View style={styles.body}>
               <Button title="Go to profile" onPress={() => navigation.navigate('Profile')}/>
                 <View style={styles.sectionContainer}>
-                  <Text style={styles.sectionTitle}>Step One</Text>
-                  <Text style={styles.sectionDescription}>
-                    Edit <Text style={styles.highlight}>App.js</Text> to change this
-                    screen and then come back to see your edits.
-                  </Text>
+                   <UserList data ={props.userlist.user ? props.userlist.user.data : []}/>
                 </View>
-                <View style={styles.sectionContainer}>
-                  <Text style={styles.sectionTitle}>See Your Changes</Text>
-                  <Text style={styles.sectionDescription}>
-                    <ReloadInstructions />
-                  </Text>
-                </View>
-                <View style={styles.sectionContainer}>
-                  <Text style={styles.sectionTitle}>Debug</Text>
-                  <Text style={styles.sectionDescription}>
-                    <DebugInstructions />
-                  </Text>
-                </View>
-                <View style={styles.sectionContainer}>
-                  <Text style={styles.sectionTitle}>Learn More</Text>
-                  <Text style={styles.sectionDescription}>
-                    Read the docs to discover what to do next:
-                  </Text>
-                </View>
-                <LearnMoreLinks />
               </View>
             </ScrollView>
           </SafeAreaView>
         </>
       )
 }
+
+mapStateToProps = (state) => {
+  return {
+    userlist: state.userdata
+  }
+}
+
+mapDispatchToProps = (dispatch) => {
+  return {
+    fecthUsers: () => {
+      dispatch(getUsers())
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homecontainer)
 
 const styles = StyleSheet.create({
     scrollView: {

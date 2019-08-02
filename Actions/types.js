@@ -1,2 +1,2 @@
-export const USER_FETCH = 'user_fetch'
-export const USER_FETCH_FAIL = 'user_fetch_failed'
+export const USER_FETCH = 'USER_FETCH'
+export const USER_FETCH_FAIL = 'FETCH_FAILED'

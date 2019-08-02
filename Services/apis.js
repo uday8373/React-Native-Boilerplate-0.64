@@ -8,8 +8,8 @@ import {Network} from './network'
 
 export default class Apis {
 
-  static get_employees = () => {
-   return Network('GET', 'employee/9778')
+  static fetch_users = () => {
+   return Network('GET', 'users')
   }
 
   static create_employee = (data) => {

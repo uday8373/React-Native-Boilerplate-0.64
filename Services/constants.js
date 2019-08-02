@@ -1,2 +1,2 @@
-export const base_url = 'http://dummy.restapiexample.com/api/v1/'
+export const base_url = 'https://reqres.in/api/'
 
