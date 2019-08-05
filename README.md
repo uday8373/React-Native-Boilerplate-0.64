@@ -21,6 +21,7 @@ A React Native Boilerplate with easy to managable project structure
 
 
  Installation instruction - 
+ 
 	1. Please add "local.properties" file inside '/android' folder and add your 
 	   sdk path - "sdk.dir=[YOUR_SDK_PATH]"
            SDK path can be found on android studio installation
