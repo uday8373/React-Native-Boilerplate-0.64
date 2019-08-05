@@ -5,6 +5,7 @@ import {Network} from './network'
 // "method(type of request)",
 // "endpoint ()", 
 // "body (if POST method)"
+// See the main function at ./network.js
 
 export default class Apis {
 

@@ -1,4 +1,4 @@
-import { USER_FETCH, USER_FETCH_FAIL } from './../Actions/types'
+import { USER_FETCH } from './../Actions/types'
 
 
 export default function(state = {}, action) {
