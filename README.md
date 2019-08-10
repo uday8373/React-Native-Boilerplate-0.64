@@ -27,7 +27,7 @@ A React Native Boilerplate with easy to managable project structure
            SDK path can be found on android studio installation
 	   
 	2. App need to generate a debug signin key so generate a sign in key by running
-	   this command in your terminal - 
+	   this command inside /android/app directory - 
 	   
 	   "keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000"
 	   Answer the questions promtps.
