@@ -2,19 +2,19 @@ A React Native Boilerplate with easy to managable project structure
 
  Project built with - 
 		Redux
-		Redux Thunk,
-		Redux Promise,
-		Hermes Enginen,
-		React-Navigation,
-		React Hooks,
-		Axios,
+		Redux Thunk
+		Redux Promise
+		Hermes Enginen
+		React-Navigation
+		React Hooks
+		Axios
 
  Project featurs - 
-		Live network status,
-		network call function prebuilt,
-		Use of Action creator & Reducer ,
-		Project structure perfomence based,
-		Using React Hooks with stateless component ,
+		Live network status
+		network call function prebuilt
+		Use of Action creator & Reducer 
+		Project structure perfomence based
+		Using React Hooks with stateless component 
 		
 
 

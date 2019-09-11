@@ -1,10 +1,12 @@
 import React from 'react'
 import { Text } from 'react-native'
+import Test from 'pacage-rn'
 
 export default function () {
   return (
     <>
-      <Text> Welcome to profile screen</Text>
+      <Test new="Hello there" />
+      <Text> Welcome to profile screen123</Text>
     </>
   )
 }
